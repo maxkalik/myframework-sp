@@ -15,6 +15,14 @@ let package = Package(
         .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.5.0")
     ],
     targets: [
+        .target(
+            name: "MyFrameworkDependencies",
+            dependencies: [
+                .product(name: "CropViewController", package: "TOCropViewController"),
+                .product(name: "Kingfisher", package: "Kingfisher")
+            ]
+            //            resources: [.process("Resources")]
+        ),
         .binaryTarget(
             name: "MyFramework",
             url: "https://cdn.triumpharcade.com/triumph-kit-releases/MyFramework-v1.0.8.zip",
